@@ -42,6 +42,7 @@ class HomeViewModel: HomeViewModelProtocol {
                     print(error.localizedDescription)
                 }
             }
+            self?.getSavedEmployees()
         }
     }
 

@@ -63,8 +63,8 @@
 		39578C0B29085B4600A00083 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				39578C10290878B800A00083 /* HomeView */,
 				39578C0D29085BBF00A00083 /* ViewModel */,
-				397B6F2A29018C7100202630 /* HomeVC.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -83,6 +83,26 @@
 				39578C0E29085C0900A00083 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		39578C10290878B800A00083 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				397B6F2A29018C7100202630 /* HomeVC.swift */,
+				397B6F2C29018C7100202630 /* Main.storyboard */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		39578C112908790300A00083 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				397B6F2629018C7100202630 /* AppDelegate.swift */,
+				397B6F2829018C7100202630 /* SceneDelegate.swift */,
+				397B6F2F29018C7200202630 /* Assets.xcassets */,
+				397B6F3129018C7200202630 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		397B6F1A29018C7000202630 = {
@@ -104,15 +124,11 @@
 		397B6F2529018C7100202630 /* AvitoTech */ = {
 			isa = PBXGroup;
 			children = (
-				39578C0929085B1B00A00083 /* View */,
+				39578C112908790300A00083 /* Resources */,
 				398AFD202902803300CCE0BC /* Extentions */,
 				397B6F3D2901C0CA00202630 /* NetworkManager */,
 				397B6F3A29018D8200202630 /* Model */,
-				397B6F2629018C7100202630 /* AppDelegate.swift */,
-				397B6F2829018C7100202630 /* SceneDelegate.swift */,
-				397B6F2C29018C7100202630 /* Main.storyboard */,
-				397B6F2F29018C7200202630 /* Assets.xcassets */,
-				397B6F3129018C7200202630 /* LaunchScreen.storyboard */,
+				39578C0929085B1B00A00083 /* View */,
 				397B6F3429018C7200202630 /* Info.plist */,
 			);
 			path = AvitoTech;
