@@ -15,7 +15,7 @@ class NetworkManager: NetworkManagerProtocol {
     
     func getEmployeesList(completion: @escaping (ObtainResult) -> Void) {
         
-        guard let url = URL(string: API.getEmployeesList) else {return}
+        guard let url = URL(string: API.baseURL) else {return}
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response, error in
             var result: ObtainResult = .success(employee: [])
             
@@ -39,6 +39,7 @@ class NetworkManager: NetworkManagerProtocol {
                 result = .success(employee: avito.company.employees)
             } catch {
                 result = .failure(error: error)
+                
             }
         }
         task.resume()

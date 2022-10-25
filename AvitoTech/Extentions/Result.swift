@@ -9,6 +9,7 @@ import Foundation
 
 enum ObtainResult {
     
-    case success(employee: [employee])
+    case success(employee: [Employee])
     case failure(error: Error)
+    
 }

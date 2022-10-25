@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39578C0729085A2300A00083 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39578C0629085A2300A00083 /* NetworkMonitor.swift */; };
+		39578C0F29085C0900A00083 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39578C0E29085C0900A00083 /* HomeViewModel.swift */; };
 		395E8C91290830720028917A /* ConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395E8C90290830720028917A /* ConfigCell.swift */; };
 		397B6F2729018C7100202630 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B6F2629018C7100202630 /* AppDelegate.swift */; };
 		397B6F2929018C7100202630 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B6F2829018C7100202630 /* SceneDelegate.swift */; };
-		397B6F2B29018C7100202630 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B6F2A29018C7100202630 /* ViewController.swift */; };
+		397B6F2B29018C7100202630 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B6F2A29018C7100202630 /* HomeVC.swift */; };
 		397B6F2E29018C7100202630 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 397B6F2C29018C7100202630 /* Main.storyboard */; };
 		397B6F3029018C7200202630 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 397B6F2F29018C7200202630 /* Assets.xcassets */; };
 		397B6F3329018C7200202630 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 397B6F3129018C7200202630 /* LaunchScreen.storyboard */; };
@@ -21,11 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39578C0629085A2300A00083 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		39578C0E29085C0900A00083 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		395E8C90290830720028917A /* ConfigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigCell.swift; sourceTree = "<group>"; };
 		397B6F2329018C7000202630 /* AvitoTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvitoTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		397B6F2629018C7100202630 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		397B6F2829018C7100202630 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		397B6F2A29018C7100202630 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		397B6F2A29018C7100202630 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		397B6F2D29018C7100202630 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		397B6F2F29018C7200202630 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		397B6F3229018C7200202630 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39578C0929085B1B00A00083 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				39578C0B29085B4600A00083 /* HomeView */,
+				39578C0C29085B8500A00083 /* CellView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		39578C0B29085B4600A00083 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				39578C0D29085BBF00A00083 /* ViewModel */,
+				397B6F2A29018C7100202630 /* HomeVC.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		39578C0C29085B8500A00083 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				395E8C90290830720028917A /* ConfigCell.swift */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
+		39578C0D29085BBF00A00083 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				39578C0E29085C0900A00083 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		397B6F1A29018C7000202630 = {
 			isa = PBXGroup;
 			children = (
@@ -66,12 +104,12 @@
 		397B6F2529018C7100202630 /* AvitoTech */ = {
 			isa = PBXGroup;
 			children = (
+				39578C0929085B1B00A00083 /* View */,
 				398AFD202902803300CCE0BC /* Extentions */,
 				397B6F3D2901C0CA00202630 /* NetworkManager */,
 				397B6F3A29018D8200202630 /* Model */,
 				397B6F2629018C7100202630 /* AppDelegate.swift */,
 				397B6F2829018C7100202630 /* SceneDelegate.swift */,
-				397B6F2A29018C7100202630 /* ViewController.swift */,
 				397B6F2C29018C7100202630 /* Main.storyboard */,
 				397B6F2F29018C7200202630 /* Assets.xcassets */,
 				397B6F3129018C7200202630 /* LaunchScreen.storyboard */,
@@ -91,8 +129,9 @@
 		397B6F3D2901C0CA00202630 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
-				397B6F3E2901C0F600202630 /* NetworkManager.swift */,
 				397B6F402901D80100202630 /* API.swift */,
+				397B6F3E2901C0F600202630 /* NetworkManager.swift */,
+				39578C0629085A2300A00083 /* NetworkMonitor.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -100,7 +139,6 @@
 		398AFD202902803300CCE0BC /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
-				395E8C90290830720028917A /* ConfigCell.swift */,
 				398AFD212902805A00CCE0BC /* Result.swift */,
 			);
 			path = Extentions;
@@ -177,13 +215,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				397B6F2B29018C7100202630 /* ViewController.swift in Sources */,
+				397B6F2B29018C7100202630 /* HomeVC.swift in Sources */,
 				395E8C91290830720028917A /* ConfigCell.swift in Sources */,
 				397B6F3C29018DCC00202630 /* Avito.swift in Sources */,
+				39578C0F29085C0900A00083 /* HomeViewModel.swift in Sources */,
 				397B6F3F2901C0F600202630 /* NetworkManager.swift in Sources */,
 				397B6F2729018C7100202630 /* AppDelegate.swift in Sources */,
 				398AFD222902805A00CCE0BC /* Result.swift in Sources */,
 				397B6F412901D80100202630 /* API.swift in Sources */,
+				39578C0729085A2300A00083 /* NetworkMonitor.swift in Sources */,
 				397B6F2929018C7100202630 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

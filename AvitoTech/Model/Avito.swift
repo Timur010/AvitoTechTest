@@ -14,11 +14,11 @@ struct Avito: Codable {
 // MARK: - Company
 struct Company: Codable {
     let name: String
-    let employees: [employee]
+    let employees: [Employee]
 }
 
 // MARK: - Employee
-struct employee: Codable {
+struct Employee: Codable {
     let name, phoneNumber: String
     let skills: [String]
     
