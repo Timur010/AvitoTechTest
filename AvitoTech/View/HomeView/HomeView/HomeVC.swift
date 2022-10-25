@@ -16,7 +16,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         viewModel = HomeViewModel()
         super.viewDidLoad()
-        showAlert()
         isCheckedInternet()
     }
 
@@ -32,18 +31,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if NetworkMonitor.shared.isConnected {
             fetchData()
         } else {
+            showAlert()
             viewModel.deleteSavedEmployees()
         }
     }
-
+    
+    //MARK: - не успел до конца реализовать(
     func showAlert() {
         let alert = UIAlertController(title: "Connection problems!!", message: "you don't have internet connection", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Reconnect", style: .default, handler: { [weak self] _ in
-            guard let self = self else { return }
+        alert.addAction(UIAlertAction(title: "Reconnect", style: .default, handler: { _ in
             self.viewDidLoad()
         }))
         alert.addAction(UIAlertAction(title: "Offline", style: .cancel))
-
+        
         present(alert, animated: true)
     }
 }
