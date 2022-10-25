@@ -7,47 +7,46 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
-    
-    @IBOutlet weak var tabelView: UITableView!
-    
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet var tableView: UITableView!
+
     let networkManager = NetworkManager()
-    var dataSource = [employee] ()
-    
+    var dataSource = [employee]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tabelView.dataSource = self
-        
         networkManager.getEmployeesList { [weak self] result in
-            guard let self = self else {return}
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let employee):
-                    self.dataSource = employee
-                    self.tabelView.reloadData()
-                case.failure(let error):
-                    print(error.localizedDescription)
+            switch result {
+            case let .success(employee):
+                self?.dataSource = employee
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
                 }
+            case let .failure(error):
+                print(error.localizedDescription)
             }
         }
     }
+}
 
+extension ViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
     }
-    
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-        
-        let post = dataSource[indexPath.row ]
-        
-        cell.name.text = post.name
-        cell.phoneNumber.text = post.phoneNumber
-        cell.Skills.text = "qwefwrgwe"
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ConfigCell", for: indexPath) as! ConfigCell
+
+        let post = dataSource[indexPath.row]
+
+        cell.nameLabel.text = post.name
+        cell.phoneNumberLabel.text = post.phoneNumber
+        cell.skillsLabel.text = post.skills.joined(separator: " ")
+
         return cell
     }
 }
-

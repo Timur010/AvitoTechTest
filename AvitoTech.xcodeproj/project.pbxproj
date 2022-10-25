@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3917572F2907E5A500B146D3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3917572E2907E5A500B146D3 /* TableViewCell.swift */; };
+		395E8C91290830720028917A /* ConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395E8C90290830720028917A /* ConfigCell.swift */; };
 		397B6F2729018C7100202630 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B6F2629018C7100202630 /* AppDelegate.swift */; };
 		397B6F2929018C7100202630 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B6F2829018C7100202630 /* SceneDelegate.swift */; };
 		397B6F2B29018C7100202630 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B6F2A29018C7100202630 /* ViewController.swift */; };
@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3917572E2907E5A500B146D3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		395E8C90290830720028917A /* ConfigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigCell.swift; sourceTree = "<group>"; };
 		397B6F2329018C7000202630 /* AvitoTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvitoTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		397B6F2629018C7100202630 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		397B6F2829018C7100202630 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +72,6 @@
 				397B6F2629018C7100202630 /* AppDelegate.swift */,
 				397B6F2829018C7100202630 /* SceneDelegate.swift */,
 				397B6F2A29018C7100202630 /* ViewController.swift */,
-				3917572E2907E5A500B146D3 /* TableViewCell.swift */,
 				397B6F2C29018C7100202630 /* Main.storyboard */,
 				397B6F2F29018C7200202630 /* Assets.xcassets */,
 				397B6F3129018C7200202630 /* LaunchScreen.storyboard */,
@@ -101,6 +100,7 @@
 		398AFD202902803300CCE0BC /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				395E8C90290830720028917A /* ConfigCell.swift */,
 				398AFD212902805A00CCE0BC /* Result.swift */,
 			);
 			path = Extentions;
@@ -178,7 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				397B6F2B29018C7100202630 /* ViewController.swift in Sources */,
-				3917572F2907E5A500B146D3 /* TableViewCell.swift in Sources */,
+				395E8C91290830720028917A /* ConfigCell.swift in Sources */,
 				397B6F3C29018DCC00202630 /* Avito.swift in Sources */,
 				397B6F3F2901C0F600202630 /* NetworkManager.swift in Sources */,
 				397B6F2729018C7100202630 /* AppDelegate.swift in Sources */,

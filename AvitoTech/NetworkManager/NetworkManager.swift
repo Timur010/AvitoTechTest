@@ -36,9 +36,9 @@ class NetworkManager: NetworkManagerProtocol {
             
             do {
                 let avito = try decoder.decode(Avito.self, from: data)
-                completion(.success(employee: avito.company.employees))
+                result = .success(employee: avito.company.employees)
             } catch {
-                completion(.failure(error: error))
+                result = .failure(error: error)
             }
         }
         task.resume()
