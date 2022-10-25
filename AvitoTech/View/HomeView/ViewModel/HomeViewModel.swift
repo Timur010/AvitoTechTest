@@ -16,9 +16,7 @@ protocol HomeViewModelProtocol {
 }
 
 class HomeViewModel: HomeViewModelProtocol {
-    
     let kay = "dataSource"
-    
     var employees: [Employee] = [] {
         didSet {
             saveDate()
@@ -51,14 +49,14 @@ class HomeViewModel: HomeViewModelProtocol {
             UserDefaults.standard.set(encodedData, forKey: kay)
         }
     }
-    
+
     func getSavedEmployees() -> [Employee] {
-            guard
-                let data = UserDefaults.standard.data(forKey: kay),
-                let savedItems = try? JSONDecoder().decode([Employee].self, from: data)
-            else {return [Employee(name: "", phoneNumber: "", skills: [""])]}
-        
-            return savedItems
+        guard
+            let data = UserDefaults.standard.data(forKey: kay),
+            let savedItems = try? JSONDecoder().decode([Employee].self, from: data)
+        else { return [Employee(name: "", phoneNumber: "", skills: [""])] }
+
+        return savedItems
     }
 
     func deleteSavedEmployees() {
@@ -70,12 +68,12 @@ class HomeViewModel: HomeViewModelProtocol {
             }
         }
     }
-    
+
     func arraySorting(data: [Employee]) -> [Employee] {
-        let arraySorting = data.sorted(by: {(name1, name2) -> Bool in
+        let arraySorting = data.sorted(by: { (name1, name2) -> Bool in
             let Name = name1.name
             let Name2 = name2.name
-            return(Name.localizedCaseInsensitiveCompare(Name2) == .orderedAscending)
+            return (Name.localizedCaseInsensitiveCompare(Name2) == .orderedAscending)
         })
         return arraySorting
     }

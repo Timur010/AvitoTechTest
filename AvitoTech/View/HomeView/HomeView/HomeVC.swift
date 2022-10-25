@@ -8,7 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
     private var viewModel: HomeViewModelProtocol!
     var dataSource: [Employee] = []
 
@@ -28,16 +27,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.tableView.reloadData()
         }
     }
-    
+
     func isCheckedInternet() {
-            if NetworkMonitor.shared.isConnected {
-                fetchData()
-            } else {
-                
-                viewModel.deleteSavedEmployees()
-            }
+        if NetworkMonitor.shared.isConnected {
+            fetchData()
+        } else {
+            viewModel.deleteSavedEmployees()
         }
-    
+    }
+
     func showAlert() {
         let alert = UIAlertController(title: "Connection problems!!", message: "you don't have internet connection", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Reconnect", style: .default, handler: { [weak self] _ in
@@ -57,7 +55,6 @@ extension ViewController {
         } else {
             return viewModel.getSavedEmployees().count
         }
-        
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -65,21 +62,18 @@ extension ViewController {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ConfigCell", for: indexPath) as! ConfigCell
-        
+
         if NetworkMonitor.shared.isConnected {
-            
-            let post = viewModel.arraySorting(data: dataSource) [indexPath.row]
-            
+            let post = viewModel.arraySorting(data: dataSource)[indexPath.row]
+
             cell.nameLabel.text = post.name
             cell.phoneNumberLabel.text = post.phoneNumber
             cell.skillsLabel.text = post.skills.joined(separator: " ")
-            
+
         } else {
-            
-            let post = viewModel.arraySorting(data: viewModel.getSavedEmployees()) [indexPath.row]
-            
+            let post = viewModel.arraySorting(data: viewModel.getSavedEmployees())[indexPath.row]
+
             cell.nameLabel.text = post.name
             cell.phoneNumberLabel.text = post.phoneNumber
             cell.skillsLabel.text = post.skills.joined(separator: " ")
